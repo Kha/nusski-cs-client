@@ -1,0 +1,36 @@
+﻿<Window x:Class="Client.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chart="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        Title="MainWindow" SizeToContent="Height" Width="1163">
+    <Grid>
+        <DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <ItemsControl x:Name="boardControl">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="9" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="Transparent" MouseDown="Border_MouseDown" MouseUp="Border_MouseUp">
+                                <Ellipse x:Name="el" Width="50" Height="50" Fill="{Binding PieceColor}" Stroke="Black" StrokeThickness="{Binding StrokeThickness}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <chart:Chart Grid.Column="1">
+                    <chart:LineSeries x:Name="p0Series" Title="Player 1" IndependentValuePath="X" DependentValuePath="Y" />
+                    <chart:LineSeries x:Name="p1Series" Title="Player 2" IndependentValuePath="X" DependentValuePath="Y" />
+                </chart:Chart>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

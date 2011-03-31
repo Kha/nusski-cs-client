@@ -1,0 +1,21 @@
+﻿<Window x:Class="Client.Starter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Starter" Height="300" Width="500" Closed="Window_Closed">
+    <DockPanel>
+        <GroupBox Header="Internet" DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="remoteBotBox" ItemsSource="{Binding}" SelectedIndex="0" Width="150" />
+                <Button x:Name="connectButton" Click="connectButton_Click">Verbinden</Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Lokal" DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="localBot1Box" ItemsSource="{Binding}" SelectedIndex="0" Width="150" />
+                <ComboBox x:Name="localBot2Box" ItemsSource="{Binding}" SelectedIndex="0" Width="150" />
+                <Button Click="startLocalButton_Click">Starten</Button>
+            </StackPanel>
+        </GroupBox>
+        <TextBox IsReadOnly="True" x:Name="logBox" />
+    </DockPanel>
+</Window>
