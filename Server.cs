@@ -19,7 +19,7 @@ namespace Client
 		const string ClientSecret = "";
 
 
-		const string ServerUri = "http://entwickler-ecke.de/nusski/nuss.php";
+		const string ServerUri = "http://www.entwickler-ecke.de/nusski/nuss.php";
 		const string ServerVersion = "3";
 
 		internal class NetworkEnemy : IPlayer
